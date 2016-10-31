@@ -70,7 +70,7 @@ class Task extends CI_Controller {
         # code... 
         // param ($id)
         $id = $this->input->post("id");
-        $table = 'tbl_todolist_riga';
+        $table = 'tbl_syahriga';
         
         $this->task_model->hapus($table, $id);
         echo "{}";
