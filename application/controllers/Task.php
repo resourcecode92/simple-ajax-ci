@@ -22,28 +22,20 @@ class Task extends CI_Controller {
             'date' => date('Y-m-d'),
             'time' => date('H:i:s'),
         );
-        $table = 'tbl_todolist_riga';
+        $table = 'tbl_syahriga';
         $id = $this->task_model->simpan($table, $data);
-        // var_dump($a);
-        // header('Access-Control-Allow-Origin: *');
-        // header("Content-Type: application/json");
 
         $data = array($this->task_model->detail($id));
-        ///var_dump($data);
+
         echo json_encode($data);
-        
-        // redirect(base_url('index.php/task/index'));
-        // redirect(base_url('index.php/task/detail/' . $id));
     }
 
     public function detail(){
         // param ($id)
         $id = $this->input->post("id");
         $data = array($this->task_model->detail($id));
-        // var_dump($data['task']);
         
         echo json_encode($data);
-        // return json_encode($data);
     }
 
     public function ubah($id)
@@ -55,9 +47,8 @@ class Task extends CI_Controller {
 
     public function ubahSimpan()
     {
-        # code...
         // param ($id)
-        $table = 'tbl_todolist_riga';
+        $table = 'tbl_syahriga';
         
         $id = $this->input->post("id");
         $task = $this->input->post('task');
@@ -72,8 +63,6 @@ class Task extends CI_Controller {
         $data = array($this->task_model->detail($id));
         
         echo json_encode($data);
-        // echo "{}";
-        // redirect(base_url('index.php/task/index'));
     }
 
     public function hapus()
@@ -85,7 +74,6 @@ class Task extends CI_Controller {
         
         $this->task_model->hapus($table, $id);
         echo "{}";
-        // redirect(base_url('index.php/task/index'));
     }
 
 }
