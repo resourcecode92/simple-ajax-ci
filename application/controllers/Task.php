@@ -22,7 +22,7 @@ class Task extends CI_Controller {
             'date' => date('Y-m-d'),
             'time' => date('H:i:s'),
         );
-        $table = 'tbl_syahriga';
+        $table = 'tbl_task';
         $id = $this->task_model->simpan($table, $data);
 
         $data = array($this->task_model->detail($id));
@@ -48,7 +48,7 @@ class Task extends CI_Controller {
     public function ubahSimpan()
     {
         // param ($id)
-        $table = 'tbl_syahriga';
+        $table = 'tbl_task';
         
         $id = $this->input->post("id");
         $task = $this->input->post('task');
@@ -70,7 +70,7 @@ class Task extends CI_Controller {
         # code... 
         // param ($id)
         $id = $this->input->post("id");
-        $table = 'tbl_syahriga';
+        $table = 'tbl_task';
         
         $this->task_model->hapus($table, $id);
         echo "{}";

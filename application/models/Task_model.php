@@ -20,12 +20,12 @@ class Task_model extends CI_Model {
 	}
 
 	public function view(){
-		$query = $this->db->query("SELECT * FROM tbl_syahriga ORDER BY id DESC");
+		$query = $this->db->query("SELECT * FROM tbl_task ORDER BY id DESC");
 		return $query->result_array();
 	}
 
     public function detail($id){
-		$query = $this->db->query("SELECT * FROM tbl_syahriga WHERE id =" . $id);
+		$query = $this->db->query("SELECT * FROM tbl_task WHERE id =" . $id);
 		return $query->result_array();
 	}
 
